@@ -2,6 +2,8 @@ import car from "../assets/car.svg";
 import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
 import settingSide from "../assets/settingsSide.svg";
+
+import Mechanicaldashboardside from "./Mechanicaldashboardside";
 export default function Screen1() {
   // Mock data
   const recentCompletedJobs = [
@@ -127,10 +129,12 @@ export default function Screen1() {
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div> */}
         </div>
-
+<div className="flex xl:hidden">
+<Mechanicaldashboardside/>
+</div>
         <div className="flex-grow lg:p-4">
-          <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
-            <p className="text-xl font-semibold flex items-center">
+          <div className="bg-[#7F7F7F] xl:rounded-lg flex flex-col gap-8 p-5">
+            <p className="text-xl ml-7 xl:ml-0 font-semibold flex items-center">
               <img src={car} alt="setting" className="w-10" />
               <p className="font-body">MyMechanical Dashboard</p>
             </p>
