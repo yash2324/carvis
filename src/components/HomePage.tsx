@@ -24,7 +24,7 @@ const HomePage = () => {
               <button
                 key={page.path}
                 onClick={() => navigate(page.path)}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                className="bg-blue-500 mx-2 md:mx-0 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
               >
                 {page.name}
               </button>
