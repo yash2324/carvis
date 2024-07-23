@@ -10,13 +10,13 @@ const Settings = () => {
             <p className="text-gray-600 font-header">B Tech</p>
           </div>
         </div>
-        <button className="bg-black text-white px-4 py-2 font-roboto rounded">
+        <button className="bg-black text-white px-4 py-2 hover:underline font-roboto rounded">
           Log Out
         </button>
       </div>
 
       <div className="flex justify-between">
-        <div className="text-center mx-auto cursor-pointer">
+        <div className="text-center mx-auto hover:underline cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="84"
@@ -34,7 +34,7 @@ const Settings = () => {
           <p className="font-header">MyPlan</p>
         </div>
 
-        <div className="text-center mx-auto cursor-pointer">
+        <div className="text-center mx-auto  hover:underline cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="110"
@@ -67,7 +67,7 @@ const Settings = () => {
           </p>
         </div>
 
-        <div className="text-center mx-auto cursor-pointer">
+        <div className="text-center mx-auto  hover:underline cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="136"
