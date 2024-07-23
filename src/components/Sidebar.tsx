@@ -75,7 +75,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="p-4 mt-5 md:mt-auto">
+      <div className="p-4 mt-auto">
         <button className="border-[1px] border-white text-[12px] md:text-[1rem] font-body w-full p-2 mb-2 text-white rounded hover:bg-gray-700">
           View FAQ for Carvis
         </button>
@@ -84,7 +84,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="bg-[#111111] text-white p-2 mt-0 md:p-4 text-center">
+      <div className="bg-[#111111] mt-auto text-white p-2 md:mt-0 md:p-4 text-center">
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
     </>
@@ -92,13 +92,17 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      <div
+        className={`md:hidden fixed top-4 left-4 z-50 ${
+          isOpen ? "hidden" : ""
+        }`}
+      >
         <button
           onClick={toggleSidebar}
-          className="text-black focus:outline-none"
+          className="focus:outline-none text-slate-500  focus:ring-2 focus:ring-opacity-50 focus:ring-gray-400"
         >
           <svg
-            className="w-6 h-6"
+            className="w-8 h-8"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
