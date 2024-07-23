@@ -7,6 +7,8 @@ import Settings from "./components/Settings";
 import Sidebar from "./components/Sidebar";
 import VehicleInfo from "./components/VehicleInfo";
 import HomePage from "./components/HomePage";
+import AiPage from "./components/AiPage2";
+import ChatbotInfo from "./components/AiPage";
 
 const App = () => {
   return (
@@ -42,6 +44,24 @@ const App = () => {
                 <div className="flex">
                   <Sidebar />
                   <VehicleInfo />
+                </div>
+              }
+            />
+            <Route
+              path="/Chatbot"
+              element={
+                <div className="flex ">
+                  <Sidebar />
+                  <AiPage />
+                </div>
+              }
+            />
+            <Route
+              path="/Chatbot-Info"
+              element={
+                <div className="flex ">
+                  <Sidebar />
+                  <ChatbotInfo />
                 </div>
               }
             />
