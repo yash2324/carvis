@@ -44,7 +44,6 @@ const Pricing = () => {
         className="absolute w-full h-full object-cover z-0 right-0 top-0"
       />
       <div className="relative z-10 flex flex-col items-center">
-        <h1 className="text-white text-3xl font-bold mb-8">Pricing Plans</h1>
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl">
           {plans.map((plan, index) => (
             <div
