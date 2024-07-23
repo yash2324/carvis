@@ -1,6 +1,4 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CustomerIntakeForm from "./components/CustomerIntakeForm";
 import Pricing from "./components/Pricing";
 import Screen1 from "./components/Screen1";
 import Screen2 from "./components/Screen2";
@@ -10,7 +8,7 @@ import Sidebar from "./components/Sidebar";
 import VehicleInfo from "./components/VehicleInfo";
 import HomePage from "./components/HomePage";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router>
       <div className="app-container">
