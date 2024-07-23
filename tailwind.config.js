@@ -6,6 +6,7 @@ export default {
       body: ['"Open Sans"', "sans-serif"],
       header: ["'Merriweather'"],
       roboto: ["Roboto"],
+      manrope: ["Manrope"],
     },
   },
   plugins: [],

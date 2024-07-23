@@ -5,8 +5,10 @@ import settingSide from "../assets/settingsSide.svg";
 const Sidebar = () => {
   return (
     <div className="bg-[#7F7F7F] h-screen w-[24%] flex flex-col">
-      <div className="bg-black text-white p-4 text-center">
-        <h1 className="text-xl font-bold font-body">Diagnose New Vehicle</h1>
+      <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
+        <h1 className="text-[18px] font-bold font-body">
+          Diagnose New Vehicle
+        </h1>
       </div>
 
       <div className="flex justify-around p-4">
@@ -51,7 +53,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="bg-black text-white p-4 text-center">
+      <div className="bg-[#111111] text-white p-4 text-center">
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
     </div>

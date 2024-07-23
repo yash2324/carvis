@@ -1,11 +1,12 @@
-import Settings from "./components/Settings";
+import Pricing from "./components/Pricing";
+
 import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div className="flex">
       <Sidebar />
-      <Settings />
+      <Pricing />
     </div>
   );
 }
