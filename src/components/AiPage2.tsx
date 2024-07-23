@@ -2,7 +2,7 @@ import InputBar from "./InputBar";
 import ImageAvatars from "./Avatar"
 function AiPage() {
   return (
-    <div className='relative min-h-screen w-3/4 p-4 pb-16 mb-8'>
+    <div className='relative min-h-screen w-3/4 p-4  '>
       <div className='flex items-center py-1 border-b-4'>
         <div className='mr-4'>
           <img className='w-[115px] rounded-md h-[95px]' src="https://s3-alpha-sig.figma.com/img/1e3b/8c85/c3f7d1c847c5461c0c2441669bd958db?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lE4ZD8x9kptt30KidbzIBnMFoWk1peDBNFMMkjBKxvyCcE2d-qLlbuPbVsMh8aTAAtCiuWk-KOBOg~LD7W4JngLd8PTKh8Cu9GruRpTTIWIPa-jekDQAslYnnnMDllWJbrT~6d3KFmv-MvmBmX6sT~~hHEjtEy99RLi~qE3BoRmxsSvai8TPJ72fqb0PHzy1SZWlFog7LDLQ5-WJGjOyglpBVMuVrvuPt6IHo2IkiTk7D1A~~TBeWbj7YLioEWeeKJqGd0e-kOtwVMRexFFlupE5Bt-bhol~Cx2vpwRulrYWg4xwuUN1H8LRD-jQKE4jpk48ya~oAaw4yk5FTP3cyA__" alt="BMW M3 2020" />
@@ -83,7 +83,7 @@ function AiPage() {
   <div className="border-2 font-medium border-black rounded-md mt-4 p-4">Suggestion 3</div>
 </div>
       
-      <div className="fixed bottom-0 w-3/4 bg-[#D3D3D3] p-4">
+      <div className="w-full mt-12 bg-[#D3D3D3] p-4">
         <InputBar />
       </div>
     </div>

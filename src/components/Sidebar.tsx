@@ -4,7 +4,7 @@ import Carvis from "../assets/Carvis.png";
 import settingSide from "../assets/settingsSide.svg";
 const Sidebar = () => {
   return (
-    <div className="bg-[#7F7F7F] h-screen w-[24%] flex flex-col">
+    <div className="bg-[#7F7F7F] w-[24%] flex flex-col">
       <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer hover:brightness-200 text-center">
         <h1 className="text-[18px] font-bold font-body">
           Diagnose New Vehicle
