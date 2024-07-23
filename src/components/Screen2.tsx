@@ -1,12 +1,11 @@
-import {  Play } from "lucide-react";
-import { MoreVertical} from "lucide-react";
+import { Play } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import car from "../assets/car.svg";
 import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
 
 import settingSide from "../assets/settingsSide.svg";
 export default function Screen2() {
-
   const appointments = [
     { name: "Steve Demps", time: "10AM", vehicle: "BMW M3 2023" },
     { name: "Roger James", time: "11 AM", vehicle: "Ford Explorer 2024" },
@@ -44,64 +43,64 @@ export default function Screen2() {
   return (
     <>
       <div className="flex  bg-gray-100">
-      <div className="bg-[#7F7F7F] h-screen w-[24%] flex flex-col">
-      <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
-        <h1 className="text-[18px] font-bold font-body">
-          Diagnose New Vehicle
-        </h1>
-      </div>
-
-      <div className="flex justify-around p-4">
-        <div className="text-center cursor-pointer">
-          <div className=" rounded-full w-12 h-12  mx-auto">
-            <img src={quickChat} alt="Quick Chat" />
+        <div className="bg-[#7F7F7F] h-[93vh] w-[24%] flex flex-col">
+          <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
+            <h1 className="text-[18px] font-bold font-body">
+              Diagnose New Vehicle
+            </h1>
           </div>
-          <span className="text-[14px] font-header">Quick Chat</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <div className="rounded-full w-12 h-12  mx-auto">
-            <img src={car} alt="car" />
+
+          <div className="flex justify-around p-4">
+            <div className="text-center cursor-pointer">
+              <div className=" rounded-full w-12 h-12  mx-auto">
+                <img src={quickChat} alt="Quick Chat" />
+              </div>
+              <span className="text-[14px] font-header">Quick Chat</span>
+            </div>
+            <div className="text-center cursor-pointer">
+              <div className="rounded-full w-12 h-12  mx-auto">
+                <img src={car} alt="car" />
+              </div>
+              <span className="text-[14px] font-header">
+                MyGarage Dashboard
+              </span>
+            </div>
+            <div className="text-center cursor-pointer">
+              <div className=" rounded-full w-12 h-12  mx-auto">
+                <img src={settingSide} alt="setting" />
+              </div>
+              <span className="text-[14px] font-header">Settings</span>
+            </div>
           </div>
-          <span className="text-[14px] font-header">MyGarage Dashboard</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <div className=" rounded-full w-12 h-12  mx-auto">
-            <img src={settingSide} alt="setting" />
+
+          <div className="bg-white m-4 p-4 h-[24rem]">
+            <h2 className="mb-5 font-header ">Recent Vehicles</h2>
+            <ul>
+              {[1, 2, 3, 4, 5].map((num) => (
+                <li key={num} className="mb-3 font-body font-semibold">
+                  vehicle {num}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-2 font-body">more vehicles....</div>
           </div>
-          <span className="text-[14px] font-header">Settings</span>
+
+          <div className="p-4 mt-auto">
+            <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
+              View FAQ for Carvis
+            </button>
+            <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
+              Ask other mechanics (Link to WhatsApp)
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className="bg-white m-4 p-4 h-[24rem]">
-        <h2 className="mb-5 font-header ">Recent Vehicles</h2>
-        <ul>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <li key={num} className="mb-3 font-body font-semibold">
-              vehicle {num}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-2 font-body">more vehicles....</div>
-      </div>
-
-      <div className="p-4 mt-auto">
-        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
-          View FAQ for Carvis
-        </button>
-        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
-          Ask other mechanics (Link to WhatsApp)
-        </button>
-      </div>
-
-      
-    </div>
-
-        <div className="flex-grow p-4 ">
-          <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
-          <p className="text-xl font-semibold flex items-center">
-          <img src={car} alt="setting" className="w-10" />
-            <p className="font-body">MyShopManager Dashboard</p>
-          </p>
+        <div className="flex-grow px-4 pt-3 ">
+          <div className="bg-[#7F7F7F] h-[90vh] rounded-lg flex flex-col gap-8 p-5">
+            <p className="text-xl font-semibold flex items-center">
+              <img src={car} alt="setting" className="w-10" />
+              <p className="font-body">MyShopManager Dashboard</p>
+            </p>
             <section className="flex  gap-6">
               <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
                 <p className="text-4xl font-medium">Current Appointments</p>
@@ -109,8 +108,12 @@ export default function Screen2() {
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-lg font-semibold"></h2>
                     <div className="flex items-center">
-                      <span className="text-sm text-black mr-2 font-semibold">Notes</span>
-                      <span className="text-sm text-black font-semibold">Assign To</span>
+                      <span className="text-sm text-black mr-2 font-semibold">
+                        Notes
+                      </span>
+                      <span className="text-sm text-black font-semibold">
+                        Assign To
+                      </span>
                     </div>
                   </div>
                   <ul>
@@ -132,7 +135,7 @@ export default function Screen2() {
                                 className="text-black mr-10"
                                 size={20}
                               />
-                             <img src={'./share.svg'} alt="" />
+                              <img src={"./share.svg"} alt="" />
                             </div>
                           </div>
                           <span className="text-sm text-gray-500">
@@ -168,48 +171,48 @@ export default function Screen2() {
                   </section>
                 </section>
                 <section className="w-full flex items-center justify-center">
-                <section className="bg-white w-10/12 rounded-xl p-7">
-                  <input
-                    type="text"
-                    className="font-medium bg-black/20 p-2 w-full outline-none rounded-lg"
-                    placeholder="Available Mechanics"
-                  />
-                  <section className="flex flex-col gap-3">
-                    {toolsSearch.map((tool, index) => (
-                      <div
-                        key={index}
-                        className=" rounded-xl bg-white flex flex-row my-1 py-2 "
-                      >
-                        <img src={tool.image} alt="" className="" />
-                        <section className="text-base font-medium flex px-5 flex-col w-8/12">
-                          <p>{tool.name}</p>
-                          <span className="text-sm text-black/80">
-                            {tool.skill}
-                          </span>
-                        </section>
-                        <section className="text-base font-medium text-blue-500 w-32 text-center flex items-center">
-                          {tool.status === "Available" ? (
-                            <section className="flex items-center">
-                              <section className="bg-green-500 rounded-full w-2 h-2 mx-3"></section>
-                              {tool.status}
-                            </section>
-                          ) : (
-                            <button className="mx-auto bg-black/60 text-white rounded-md p-1">
-                              Request
-                            </button>
-                          )}
-                        </section>
-                      </div>
-                    ))}
+                  <section className="bg-white w-10/12 rounded-xl p-7">
+                    <input
+                      type="text"
+                      className="font-medium bg-black/20 p-2 w-full outline-none rounded-lg"
+                      placeholder="Available Mechanics"
+                    />
+                    <section className="flex flex-col gap-3">
+                      {toolsSearch.map((tool, index) => (
+                        <div
+                          key={index}
+                          className=" rounded-xl bg-white flex flex-row my-1 py-2 "
+                        >
+                          <img src={tool.image} alt="" className="" />
+                          <section className="text-base font-medium flex px-5 flex-col w-8/12">
+                            <p>{tool.name}</p>
+                            <span className="text-sm text-black/80">
+                              {tool.skill}
+                            </span>
+                          </section>
+                          <section className="text-base font-medium text-blue-500 w-32 text-center flex items-center">
+                            {tool.status === "Available" ? (
+                              <section className="flex items-center">
+                                <section className="bg-green-500 rounded-full w-2 h-2 mx-3"></section>
+                                {tool.status}
+                              </section>
+                            ) : (
+                              <button className="mx-auto bg-black/60 text-white rounded-md p-1">
+                                Request
+                              </button>
+                            )}
+                          </section>
+                        </div>
+                      ))}
+                    </section>
                   </section>
-                </section>
                 </section>
               </div>
             </section>
           </div>
         </div>
       </div>
-      <div className="bg-[#111111] text-white w-full p-4 text-center">
+      <div className="bg-[#111111] h-[7vh] text-white w-full p-4 text-center">
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
     </>
