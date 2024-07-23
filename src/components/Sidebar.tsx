@@ -12,19 +12,19 @@ const Sidebar = () => {
       </div>
 
       <div className="flex justify-around p-4">
-        <div className="text-center cursor-pointer">
+        <div className="text-center  hover:underline  cursor-pointer">
           <div className=" rounded-full w-12 h-12  mx-auto">
             <img src={quickChat} alt="Quick Chat" />
           </div>
           <span className="text-[14px] font-header">Quick Chat</span>
         </div>
-        <div className="text-center cursor-pointer">
+        <div className="text-center  hover:underline cursor-pointer">
           <div className="rounded-full w-12 h-12  mx-auto">
             <img src={car} alt="car" />
           </div>
           <span className="text-[14px] font-header">MyGarage Dashboard</span>
         </div>
-        <div className="text-center cursor-pointer">
+        <div className="text-center  hover:underline cursor-pointer">
           <div className=" rounded-full w-12 h-12  mx-auto">
             <img src={settingSide} alt="setting" />
           </div>
