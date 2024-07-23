@@ -19,25 +19,25 @@ export default function Screen2() {
       name: "Steve Rogers",
       status: "Available",
       skill: "A tech",
-      image: "../../public/car13.jpg",
+      image: "./car13.jpg",
     },
     {
       name: "Mike Bob",
       status: "Request",
       skill: "Master Tech",
-      image: "../../public/car14.jpg",
+      image: "./car14.jpg",
     },
     {
       name: "James Rob",
       status: "Available",
       skill: "B tech",
-      image: "../../public/car15.jpg",
+      image: "./car15.jpg",
     },
     {
       name: "Mike Green",
       status: "Request",
       skill: "Lube Tech",
-      image: "../../public/car16.jpg",
+      image: "./car16.jpg",
     },
   ];
   return (
