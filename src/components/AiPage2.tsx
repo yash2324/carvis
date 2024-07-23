@@ -54,7 +54,7 @@ function AiPage() {
 
                   </div>
                   <div>
-                    <p className="ml-4 font-semibold "> 
+                    <p className="mx-4 mt-2 lg:mt-0 font-semibold "> 
                     Autolite Iridium XP Automotive
                     Replacement Spark Plugs, XP3924
                     (4 Pack)
@@ -67,7 +67,7 @@ function AiPage() {
 
                   </div>
                   <div>
-                    <p className="ml-4 font-semibold"> 
+                    <p className="ml-4 mt-2 lg:mt-0 font-semibold"> 
                     Denso Direct Ignition Coil OE Quality
                     - 673-2313
                     </p>

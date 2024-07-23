@@ -44,7 +44,7 @@ function ChatbotInfo() {
           </div>
         </div>
         
-        <div className="w-[280px] lg:w-[540px] h-[230px] lg:h-[270px] bg-[#FAFAFA] ml-8 lg:ml-64 z-10 lg:z-20 relative -mt-[30px] lg:-mt-[25px] flex flex-col justify-start items-start p-4 rounded-md shadow-md">
+        <div className="w-[280px] lg:w-[540px] h-[230px] lg:h-[270px] bg-[#FAFAFA] ml-12 lg:ml-64 z-10 lg:z-20 relative -mt-[30px] lg:-mt-[25px] flex flex-col justify-start items-start p-4 rounded-md shadow-md">
           <div className="relative">
             <img
               className="w-[250px]  lg:w-[511px]  h-[150px] lg:h-[200px] rounded-md"
