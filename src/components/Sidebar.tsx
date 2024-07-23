@@ -118,7 +118,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="hidden md:flex bg-[#7F7F7F] w-[24%] h-screen flex-col">
+      <div className="hidden md:flex bg-[#7F7F7F] w-[24%] min-h-screen flex-col">
         {sidebarContent}
       </div>
 
