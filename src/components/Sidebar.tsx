@@ -1,44 +1,58 @@
+import { useState } from "react";
 import car from "../assets/car.svg";
 import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
 import settingSide from "../assets/settingsSide.svg";
+
 const Sidebar = () => {
-  return (
-    <div className="bg-[#7F7F7F] w-[24%] h-screen flex flex-col">
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const sidebarContent = (
+    <>
       <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer hover:brightness-200 text-center">
-        <h1 className="text-[18px] font-bold font-body">
+        <h1 className="text-[10px] md:text-[18px] font-bold font-body">
           Diagnose New Vehicle
         </h1>
       </div>
 
       <div className="flex justify-around p-4">
-        <div className="text-center  hover:underline  cursor-pointer">
-          <div className=" rounded-full w-12 h-12  mx-auto">
+        <div className="text-center hover:underline cursor-pointer">
+          <div className="rounded-full w-6 h-6 md:w-12 md:h-12 mx-auto">
             <img src={quickChat} alt="Quick Chat" />
           </div>
-          <span className="text-[14px] font-header">Quick Chat</span>
+          <span className="text-[10px] md:text-[14px] font-header">
+            Quick Chat
+          </span>
         </div>
-        <div className="text-center  hover:underline cursor-pointer">
-          <div className="rounded-full w-12 h-12  mx-auto">
+        <div className="text-center hover:underline cursor-pointer">
+          <div className="rounded-full w-6 h-6 md:w-12 md:h-12 mx-auto">
             <img src={car} alt="car" />
           </div>
-          <span className="text-[14px] font-header">MyGarage Dashboard</span>
+          <span className="text-[10px]  px-2 md:px-0 md:text-[14px] font-header">
+            MyGarage Dashboard
+          </span>
         </div>
-        <div className="text-center  hover:underline cursor-pointer">
-          <div className=" rounded-full w-12 h-12  mx-auto">
+        <div className="text-center hover:underline cursor-pointer">
+          <div className="rounded-full w-6 h-6 md:w-12 md:h-12 mx-auto">
             <img src={settingSide} alt="setting" />
           </div>
-          <span className="text-[14px] font-header">Settings</span>
+          <span className="text-[10px] md:text-[14px] font-header">
+            Settings
+          </span>
         </div>
       </div>
 
-      <div className="bg-white m-4 p-4 h-[24rem]">
-        <h2 className="mb-5 font-header ">Recent Vehicles</h2>
+      <div className="bg-white  mx-1  md:m-4 p-4 h-auto md:h-[24rem]">
+        <h2 className="mb-1 md:mb-5 font-header">Recent Vehicles</h2>
         <ul>
           {[1, 2, 3, 4, 5].map((num) => (
             <li
               key={num}
-              className="mb-3 font-body font-semibold cursor-pointer hover:underline"
+              className="mb-1 md:mb-3 font-body  font-semibold cursor-pointer hover:underline"
             >
               vehicle {num}
             </li>
@@ -49,19 +63,76 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="p-4 mt-auto">
-        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded hover:bg-gray-700">
+      <div className="p-4 mt-5 md:mt-auto">
+        <button className="border-[1px] border-white text-[12px] md:text-[1rem] font-body w-full p-2 mb-2 text-white rounded hover:bg-gray-700">
           View FAQ for Carvis
         </button>
-        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded hover:bg-gray-700">
+        <button className="border-[1px] border-white font-body text-[12px] md:text-[1rem] w-full p-2 mb-1 text-white rounded hover:bg-gray-700">
           Ask other mechanics (Link to WhatsApp)
         </button>
       </div>
 
-      <div className="bg-[#111111] text-white p-4 text-center">
+      <div className="bg-[#111111] text-white p-2 mt-0 md:p-4 text-center">
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      <div className="md:hidden fixed top-4 left-4 z-50">
+        <button
+          onClick={toggleSidebar}
+          className="text-black focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="hidden md:flex bg-[#7F7F7F] w-[24%] h-screen flex-col">
+        {sidebarContent}
+      </div>
+
+      <div
+        className={`md:hidden fixed inset-y-0 left-0 transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } bg-[#7F7F7F] w-72 overflow-auto space-y-6 py-7 px-2 transition duration-200 ease-in-out z-40`}
+      >
+        <button
+          onClick={toggleSidebar}
+          className="absolute top-4 right-4 text-white"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        {sidebarContent}
+      </div>
+    </>
   );
 };
 
