@@ -13,11 +13,11 @@ const Input: React.FC<InputProps> = ({ type, placeholder }) => (
   />
 );
 
-const VehicleInfo: React.FC = () => {
+const VehicleInfo = () => {
   return (
     <div className="w-[76%] min-h-screen flex items-center">
       <img src={CarBg} className="z-0 absolute h-full right-0 top-0 w-[76%]" />
-      <div className="max-w-md w-[24rem] mx-auto z-10 bg-[#7F7F7F] p-3 rounded-lg shadow-lg">
+      <div className="max-w-md w-[24rem] mx-auto border-white border-[1px] z-10 bg-[#7F7F7F] p-3 rounded-md shadow-lg">
         <h2 className="text-xl font-bold font-redHat mb-4 text-white">
           Customer Info
         </h2>
