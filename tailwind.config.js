@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       body: ['"Open Sans"', "sans-serif"],
       header: ["'Merriweather'"],
+      roboto: ["Roboto"],
     },
   },
   plugins: [],

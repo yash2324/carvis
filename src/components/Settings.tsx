@@ -2,21 +2,21 @@ import profile from "../assets/profilePic.png";
 const Settings = () => {
   return (
     <div className="bg-white p-4 w-[75%]">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between border-b-[#EBEBEB] border-b-2 items-center pb-4 mb-4">
         <div className="flex items-center">
           <img src={profile} alt="Profile" className="w-32  mr-4" />
           <div>
-            <h1 className="text-2xl font-bold">James Philip</h1>
-            <p className="text-gray-600">B Tech</p>
+            <h1 className="text-2xl font-bold font-body">James Philip</h1>
+            <p className="text-gray-600 font-header">B Tech</p>
           </div>
         </div>
-        <button className="bg-black text-white px-4 py-2 rounded">
+        <button className="bg-black text-white px-4 py-2 font-roboto rounded">
           Log Out
         </button>
       </div>
 
       <div className="flex justify-between">
-        <div className="text-center mx-auto">
+        <div className="text-center mx-auto cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="84"
@@ -31,10 +31,10 @@ const Settings = () => {
               />
             </svg>
           </div>
-          <p className="font-semibold">MyPlan</p>
+          <p className="font-header">MyPlan</p>
         </div>
 
-        <div className="text-center mx-auto">
+        <div className="text-center mx-auto cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="110"
@@ -61,13 +61,13 @@ const Settings = () => {
               </defs>
             </svg>
           </div>
-          <p className="font-semibold">Referal Link</p>
-          <p className="text-xs text-gray-600">
+          <p className="font-header">Referal Link</p>
+          <p className="text-xs text-gray-600 font-header">
             (Get a month free for every sign up)
           </p>
         </div>
 
-        <div className="text-center mx-auto">
+        <div className="text-center mx-auto cursor-pointer">
           <div className="w-[6.25rem] h-[6.25rem]  rounded-full mx-auto mb-2 flex items-center justify-center">
             <svg
               width="136"
@@ -89,7 +89,7 @@ const Settings = () => {
               </defs>
             </svg>
           </div>
-          <p className="font-semibold">Edit Profile</p>
+          <p className="font-header">Edit Profile</p>
         </div>
       </div>
     </div>
