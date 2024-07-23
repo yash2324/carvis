@@ -25,7 +25,7 @@ const Sidebar = () => {
 
   const sidebarContent = (
     <>
-      <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer hover:brightness-200 text-center">
+      <div className="bg-[#111111]  mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer hover:brightness-200 text-center">
         <h1 className="text-[10px] md:text-[18px] font-bold font-body">
           Diagnose New Vehicle
         </h1>

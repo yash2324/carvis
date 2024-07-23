@@ -9,6 +9,14 @@ export default {
       manrope: ["Manrope"],
       redHat: ["Red Hat Display"],
     },
+    extend: {
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1500px",
+      },
+    },
   },
   plugins: [],
 };
