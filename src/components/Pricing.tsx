@@ -40,7 +40,7 @@ const Pricing = () => {
       <img
         src={pricingBg}
         alt="Pricing Background"
-        className="absolute h-full z-0 right-0 top-0"
+        className="absolute w-[76%] h-full z-0 right-0 top-0"
       />
       <div className="flex flex-wrap justify-center z-10 gap-8">
         {plans.map((plan, index) => (
