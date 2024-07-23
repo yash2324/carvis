@@ -19,7 +19,7 @@ const HomePage = () => {
       <main className="flex-grow flex items-center justify-center bg-gray-100">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-8">Carvis Assignment Screens</h1>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {pages.map((page) => (
               <button
                 key={page.path}
