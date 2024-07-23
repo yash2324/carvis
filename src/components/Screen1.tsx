@@ -77,8 +77,8 @@ export default function Screen1() {
 
   return (
     <>
-      <div className="flex  bg-gray-100">
-        <div className="bg-[#7F7F7F]  w-[24%] flex flex-col">
+      <div className="flex flex-col lg:flex-row  bg-gray-100">
+        <div className="bg-[#7F7F7F] hidden xl:flex  w-[24%]  flex-col">
           <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
             <h1 className="text-[18px] font-bold font-body">
               Diagnose New Vehicle
@@ -128,14 +128,14 @@ export default function Screen1() {
       </div> */}
         </div>
 
-        <div className="flex-grow p-4 ">
+        <div className="flex-grow lg:p-4">
           <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
             <p className="text-xl font-semibold flex items-center">
               <img src={car} alt="setting" className="w-10" />
               <p className="font-body">MyMechanical Dashboard</p>
             </p>
-            <section className="flex gap-6 -mt-4">
-              <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
+            <section className="flex flex-col lg:flex-row gap-6 -mt-4">
+              <div className="rounded-xl lg:w-6/12 bg-white p-4 gap-3 flex flex-col">
                 <p className="text-xl font-medium">My Bay</p>
                 <p className="font-medium text-black/80">
                   Newly Assigned Vehicles
@@ -172,13 +172,13 @@ export default function Screen1() {
                   </section>
                 ))}
               </div>
-              <div className="w-6/12  flex flex-col gap-7">
+              <div className="lg:w-6/12  flex flex-col gap-7">
                 <section>
                   <p className="font-medium text-black/80 mb-4">
                     Guides & News
                   </p>
                   <section className="w-full flex flex-row gap-5">
-                    <section className="bg-white rounded-2xl h-60 w-7/12 p-2">
+                    <section className="bg-white rounded-2xl lg:h-60 w-7/12 p-2">
                       <img src={"./car5.jpg"} alt="" />
                       <section className="flex flex-col justify-between flex-grow  h-[40%]">
                         <p className="font-semibold text-lg my-1">
@@ -187,7 +187,7 @@ export default function Screen1() {
                         <p className="">John Collins</p>
                       </section>
                     </section>
-                    <section className="w-5/12 flex flex-col gap-3 h-60 ">
+                    <section className="w-5/12 flex flex-col gap-3 lg:h-60 ">
                       {guidesAndNews.map((guide, index) => (
                         <div
                           key={index}
