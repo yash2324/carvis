@@ -1,12 +1,11 @@
-import Pricing from "./components/Pricing";
-
 import Sidebar from "./components/Sidebar";
+import VehicleInfo from "./components/VehicleInfo";
 
 function App() {
   return (
     <div className="flex">
       <Sidebar />
-      <Pricing />
+      <VehicleInfo />
     </div>
   );
 }

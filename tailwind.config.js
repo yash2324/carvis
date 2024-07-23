@@ -7,6 +7,7 @@ export default {
       header: ["'Merriweather'"],
       roboto: ["Roboto"],
       manrope: ["Manrope"],
+      redHat: ["Red Hat Display"],
     },
   },
   plugins: [],
