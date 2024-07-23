@@ -2,7 +2,6 @@ import car from "../assets/car.svg";
 import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
 import settingSide from "../assets/settingsSide.svg";
-
 export default function Screen1() {
   // Mock data
   const recentCompletedJobs = [
@@ -77,31 +76,31 @@ export default function Screen1() {
   ];
 
   return (
-    <div className="flex flex-col h-screen">
-      <div className="flex flex-grow bg-gray-100 overflow-hidden">
-        <div className="bg-[#7F7F7F] w-[24%] flex flex-col">
-          <div className="bg-[#111111] mx-3 rounded-lg mt-2 text-white px-3 py-1 cursor-pointer text-center">
-            <h1 className="text-[16px] font-bold font-body">
+    <>
+      <div className="flex  bg-gray-100">
+        <div className="bg-[#7F7F7F]  w-[24%] flex flex-col">
+          <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
+            <h1 className="text-[18px] font-bold font-body">
               Diagnose New Vehicle
             </h1>
           </div>
 
-          <div className="flex justify-between p-3">
+          <div className="flex justify-between p-4">
             <div className="text-center cursor-pointer">
-              <div className="rounded-full w-10 h-10 mx-auto">
+              <div className=" rounded-full w-12 h-12  mx-auto">
                 <img src={quickChat} alt="Quick Chat" />
               </div>
-              <span className="text-[12px] font-header">Quick Chat</span>
+              <span className="text-[14px] font-header">Quick Chat</span>
             </div>
             <div className="text-center cursor-pointer">
-              <div className="rounded-full w-10 h-10 mx-auto">
+              <div className=" rounded-full w-12 h-12  mx-auto">
                 <img src={settingSide} alt="setting" />
               </div>
-              <span className="text-[12px] font-header">Settings</span>
+              <span className="text-[14px] font-header">Settings</span>
             </div>
           </div>
 
-          <div className="h-4/6 bg-white m-2 p-5 rounded-lg  overflow-y-auto">
+          <div className="h-4/6 bg-white m-4 p-5 rounded-lg  overflow-y-auto">
             <h3 className="font-bold  text-2xl h-1/6 font-header">
               Recent Vehicles
             </h3>
@@ -115,126 +114,124 @@ export default function Screen1() {
             <p className="text-sm text-black mt-7">more vehicles...</p>
           </div>
 
-          <div className="p-3 mt-auto">
-            <button className="border-[1px] border-white font-body w-full p-2 hover:bg-gray-700 mb-2 text-white rounded text-sm">
+          <div className="p-4 mt-auto">
+            <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
               View FAQ for Carvis
             </button>
-            <button className="border-[1px] border-white font-body w-full p-2 hover:bg-gray-700 mb-2 text-white rounded text-sm">
+            <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
               Ask other mechanics (Link to WhatsApp)
             </button>
           </div>
+
+          {/* <div className="bg-[#111111] text-white p-4 text-center">
+        <img className="w-44 mx-auto" src={Carvis} alt="logo" />
+      </div> */}
         </div>
 
-        <div className="flex-grow p-3 overflow-y-auto">
-          <div className="h-[91vh] bg-[#7F7F7F] rounded-lg flex flex-col gap-4 p-3">
-            <p className="text-lg font-semibold flex items-center">
-              <img src={car} alt="setting" className="w-8 mr-2" />
+        <div className="flex-grow p-4 ">
+          <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
+            <p className="text-xl font-semibold flex items-center">
+              <img src={car} alt="setting" className="w-10" />
               <p className="font-body">MyMechanical Dashboard</p>
             </p>
-            <section className="flex gap-4">
-              <div className="rounded-xl w-6/12 bg-white p-3 gap-2 flex flex-col">
-                <p className="text-lg font-medium">My Bay</p>
-                <p className="font-medium text-black/80 text-sm">
+            <section className="flex gap-6 -mt-4">
+              <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
+                <p className="text-xl font-medium">My Bay</p>
+                <p className="font-medium text-black/80">
                   Newly Assigned Vehicles
                 </p>
                 {newlyAssignedVehicles.map((vehicle, index) => (
-                  <section key={index} className="flex my-1">
+                  <section key={index} className="flex my-2">
                     <img src={vehicle.image} alt="" className="w-3/12" />
-                    <section className="w-8/12 flex flex-col px-3 py-1 justify-between">
-                      <p className="font-bold text-sm">{vehicle.car}</p>
-                      <p className="font-medium text-black/60 text-xs">
+                    <section className="w-8/12 flex flex-col px-5 py-3 justify-between ">
+                      <p className="font-bold text-lg">{vehicle.car}</p>
+
+                      <p className="font-medium text-black/60">
                         {vehicle.issue}
                       </p>
                     </section>
-                    <p className="w-1/12 font-medium text-black/60 py-1 text-xs">
+                    <p className="w-1/12 font-medium text-black/60 py-4">
                       {vehicle.id}
                     </p>
                   </section>
                 ))}
-                <p className="font-medium text-black/80 text-sm">
-                  Vehicles on hold
-                </p>
+                <p className="font-medium text-black/80">Vehicles on hold</p>
                 {vehiclesOnHold.map((vehicle, index) => (
-                  <section key={index} className="flex my-1">
+                  <section key={index} className="flex my-2">
                     <img src={vehicle.image} alt="" className="w-3/12" />
-                    <section className="w-8/12 flex flex-col px-3 py-2 justify-between">
-                      <p className="font-bold text-sm">{vehicle.car}</p>
-                      <p className="font-medium text-black/60 text-xs">
+                    <section className="w-8/12 flex flex-col px-5 py-6 justify-between ">
+                      <p className="font-bold text-lg">{vehicle.car}</p>
+
+                      <p className="font-medium text-black/60">
                         {vehicle.issue}
                       </p>
                     </section>
-                    <p className="w-1/12 font-medium text-black/60 py-1 text-xs">
+                    <p className="w-1/12 font-medium text-black/60 py-4">
                       {vehicle.id}
                     </p>
                   </section>
                 ))}
               </div>
-              <div className="w-6/12 flex flex-col gap-4">
+              <div className="w-6/12  flex flex-col gap-7">
                 <section>
-                  <p className="font-medium text-black/80 mb-2 text-sm">
+                  <p className="font-medium text-black/80 mb-4">
                     Guides & News
                   </p>
-                  <section className="w-full flex flex-row gap-3">
-                    <section className="bg-white rounded-2xl h-48 w-7/12 p-2">
-                      <img
-                        src={"../../public/car5.jpg"}
-                        alt=""
-                        className="h-2/3 w-full object-cover"
-                      />
-                      <section className="flex flex-col justify-between flex-grow h-1/3">
-                        <p className="font-semibold text-sm my-1">
+                  <section className="w-full flex flex-row gap-5">
+                    <section className="bg-white rounded-2xl h-60 w-7/12 p-2">
+                      <img src={"./car5.jpg"} alt="" />
+                      <section className="flex flex-col justify-between flex-grow  h-[40%]">
+                        <p className="font-semibold text-lg my-1">
                           New tips for hybrids
                         </p>
-                        <p className="text-xs">John Collins</p>
+                        <p className="">John Collins</p>
                       </section>
                     </section>
-                    <section className="w-5/12 flex flex-col gap-2 h-48">
+                    <section className="w-5/12 flex flex-col gap-3 h-60 ">
                       {guidesAndNews.map((guide, index) => (
                         <div
                           key={index}
-                          className="bg-white rounded-xl flex flex-row overflow-hidden p-1 h-1/3"
+                          className="bg-white rounded-xl flex flex-row overflow-hidden p-1.5 h-2/6"
                         >
                           <div className="w-8/12 flex flex-col justify-between">
-                            <p className="text-xs font-medium">{guide.title}</p>
-                            <p className="text-[10px]">{guide.author}</p>
+                            <p className="text-base font-medium">
+                              {guide.title}
+                            </p>
+                            <p className="text-xs">{guide.author}</p>
                           </div>
-                          <img
-                            src={guide.image}
-                            alt=""
-                            className="w-4/12 object-cover"
-                          />
+                          <img src={guide.image} alt="" className="w-4/12" />
                         </div>
                       ))}
                     </section>
                   </section>
                 </section>
-                <section className="bg-white rounded-xl p-3">
+                <section className="bg-white rounded-xl p-7">
                   <input
                     type="text"
-                    className="font-medium bg-black/20 p-1 w-full outline-none rounded-lg text-sm"
+                    className="font-medium bg-black/20 p-2 w-full outline-none rounded-lg"
                     placeholder="Tool Search"
                   />
-                  <section className="flex flex-col gap-2 mt-2">
+                  <section className="flex flex-col gap-3">
                     {toolsSearch.map((tool, index) => (
                       <div
                         key={index}
-                        className="rounded-xl border-b bg-white flex flex-row py-1"
+                        className=" rounded-xl border-b bg-white flex flex-row my-1 py-2 "
                       >
-                        <img src={tool.image} alt="" className="w-1/6" />
-                        <section className="text-sm font-medium flex px-3 flex-col w-8/12">
+                        <img src={tool.image} alt="" className="" />
+                        <section className="text-base font-medium flex px-5 flex-col w-8/12">
                           <p>{tool.name}</p>
-                          <span className="text-xs text-black/80">
+                          <span className="text-sm text-black/80">
                             Conversation Preview...
                           </span>
                         </section>
-                        <section className="text-xs font-medium text-blue-500 w-3/12 text-center flex items-center">
+                        <section className="text-base font-medium text-blue-500 w-32 text-center flex items-center">
                           {tool.status === "Available" ? (
                             <section className="flex items-center">
-                              <section className="bg-green-500 rounded-full w-1 h-1 mx-1"></section>
+                              <section className="bg-green-500 rounded-full w-2 h-2 mx-3"></section>
                               {tool.status}
                             </section>
                           ) : (
-                            <button className="mx-auto bg-black/60 text-white rounded-md p-1 text-[10px]">
+                            <button className="mx-auto bg-black/60 text-white rounded-md p-1">
                               Request
                             </button>
                           )}
@@ -248,9 +245,9 @@ export default function Screen1() {
           </div>
         </div>
       </div>
-      <div className="bg-[#111111] text-white p-2 text-center">
-        <img className="h-8 mx-auto" src={Carvis} alt="logo" />
+      <div className="bg-[#111111] text-white w-full p-4 text-center">
+        <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
-    </div>
+    </>
   );
 }
