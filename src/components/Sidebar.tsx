@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import car from "../assets/car.svg";
 import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
@@ -6,10 +6,22 @@ import settingSide from "../assets/settingsSide.svg";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const sidebarRef = useRef<HTMLDivElement>(null);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const sidebarContent = (
     <>
@@ -107,6 +119,7 @@ const Sidebar = () => {
       </div>
 
       <div
+        ref={sidebarRef}
         className={`md:hidden fixed inset-y-0 left-0 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } bg-[#7F7F7F] w-72 overflow-auto space-y-6 py-7 px-2 transition duration-200 ease-in-out z-40`}
