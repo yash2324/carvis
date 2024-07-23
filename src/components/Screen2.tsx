@@ -1,13 +1,12 @@
-import { Settings, MessageSquare, CarFront, Play } from "lucide-react";
-import { MoreVertical, UserPlus } from "lucide-react";
+import {  Play } from "lucide-react";
+import { MoreVertical} from "lucide-react";
+import car from "../assets/car.svg";
+import quickChat from "../assets/quickChat.svg";
+import Carvis from "../assets/Carvis.png";
+
+import settingSide from "../assets/settingsSide.svg";
 export default function Screen2() {
-  const recentCompletedJobs = [
-    { car: "Ford Explorer 2020", issue: "transmission leak" },
-    { car: "Toyota Corolla 2018", issue: "engine oil" },
-    { car: "GMC Sierra 2015", issue: "brake fluid" },
-    { car: "Toyota Prius 2023", issue: "change tires" },
-    { car: "Ford Fusion 2015", issue: "electrical wiring" },
-  ];
+
   const appointments = [
     { name: "Steve Demps", time: "10AM", vehicle: "BMW M3 2023" },
     { name: "Roger James", time: "11 AM", vehicle: "Ford Explorer 2024" },
@@ -45,54 +44,73 @@ export default function Screen2() {
   return (
     <>
       <div className="flex  bg-gray-100">
-        <div className="w-1/4 bg-black/60 p-4 flex min-h-screen flex-col">
-          <button className="bg-black text-white py-2 px-4 rounded mb-4">
-            New Customer Vehicle
-          </button>
-          <div className="flex justify-between mb-4">
-            <button className="flex items-center">
-              <MessageSquare className="mr-2" />
-              Quick Chat
-            </button>
-            <button className="flex items-center">
-              <Settings className="mr-2" />
-              Settings
-            </button>
+      <div className="bg-[#7F7F7F] h-screen w-[24%] flex flex-col">
+      <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
+        <h1 className="text-[18px] font-bold font-body">
+          Diagnose New Vehicle
+        </h1>
+      </div>
+
+      <div className="flex justify-around p-4">
+        <div className="text-center cursor-pointer">
+          <div className=" rounded-full w-12 h-12  mx-auto">
+            <img src={quickChat} alt="Quick Chat" />
           </div>
-          <div className="h-4/6 bg-white  p-5 rounded-lg  overflow-y-auto">
-            <h3 className="font-bold mb-2 text-2xl h-1/6">Recent Vehicles</h3>
-            <section className="flex flex-col justify-between h-4/6">
-              {recentCompletedJobs.map((_job, index) => (
-                <p key={index} className="mb-2 text-base font-medium">
-                  Vehicle {index + 1}
-                </p>
-              ))}
-            </section>
-            <p className="text-sm text-blue-500">more vehicles...</p>
-          </div>
-          <button className="bg-transparent border-2 border-white py-2 px-4 rounded mt-4">
-            View FAQ for Carvis
-          </button>
-          <button className="bg-transparent border-2 border-white py-2 px-4 rounded mt-4">
-            Ask other mechanics (Link to WhatsApp)
-          </button>
+          <span className="text-[14px] font-header">Quick Chat</span>
         </div>
+        <div className="text-center cursor-pointer">
+          <div className="rounded-full w-12 h-12  mx-auto">
+            <img src={car} alt="car" />
+          </div>
+          <span className="text-[14px] font-header">MyGarage Dashboard</span>
+        </div>
+        <div className="text-center cursor-pointer">
+          <div className=" rounded-full w-12 h-12  mx-auto">
+            <img src={settingSide} alt="setting" />
+          </div>
+          <span className="text-[14px] font-header">Settings</span>
+        </div>
+      </div>
+
+      <div className="bg-white m-4 p-4 h-[24rem]">
+        <h2 className="mb-5 font-header ">Recent Vehicles</h2>
+        <ul>
+          {[1, 2, 3, 4, 5].map((num) => (
+            <li key={num} className="mb-3 font-body font-semibold">
+              vehicle {num}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-2 font-body">more vehicles....</div>
+      </div>
+
+      <div className="p-4 mt-auto">
+        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
+          View FAQ for Carvis
+        </button>
+        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
+          Ask other mechanics (Link to WhatsApp)
+        </button>
+      </div>
+
+      
+    </div>
 
         <div className="flex-grow p-4 ">
-          <div className="bg-black/60 rounded-lg flex flex-col gap-8 p-5">
-            <p className="text-lg font-semibold flex">
-              <CarFront />
-              My Shop Manager Dashboard
-            </p>
-            <section className="flex gap-6">
+          <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
+          <p className="text-xl font-semibold flex items-center">
+          <img src={car} alt="setting" className="w-10" />
+            <p className="font-body">MyShopManager Dashboard</p>
+          </p>
+            <section className="flex  gap-6">
               <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
                 <p className="text-4xl font-medium">Current Appointments</p>
-                <div className="bg-white rounded-lg shadow p-4 max-w-md">
+                <div className="bg-white rounded-lg  p-4 ">
                   <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-lg font-semibold">Appointments</h2>
+                    <h2 className="text-lg font-semibold"></h2>
                     <div className="flex items-center">
-                      <span className="text-sm text-gray-500 mr-2">Notes</span>
-                      <span className="text-sm text-gray-500">Assign To</span>
+                      <span className="text-sm text-black mr-2 font-semibold">Notes</span>
+                      <span className="text-sm text-black font-semibold">Assign To</span>
                     </div>
                   </div>
                   <ul>
@@ -114,7 +132,7 @@ export default function Screen2() {
                                 className="text-black mr-10"
                                 size={20}
                               />
-                              <UserPlus className="text-black" size={20} />
+                             <img src={'./share.svg'} alt="" />
                             </div>
                           </div>
                           <span className="text-sm text-gray-500">
@@ -132,24 +150,25 @@ export default function Screen2() {
                     Job Status Tracking
                   </p>
                   <section className="flex justify-between gap-7">
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-20">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">3</span> Waiting
                       </p>
                     </div>
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-20">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">5</span> In Servive
                       </p>
                     </div>
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-20">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">10</span> Completed
                       </p>
                     </div>
                   </section>
                 </section>
-                <section className="bg-white rounded-xl p-7">
+                <section className="w-full flex items-center justify-center">
+                <section className="bg-white w-10/12 rounded-xl p-7">
                   <input
                     type="text"
                     className="font-medium bg-black/20 p-2 w-full outline-none rounded-lg"
@@ -184,13 +203,14 @@ export default function Screen2() {
                     ))}
                   </section>
                 </section>
+                </section>
               </div>
             </section>
           </div>
         </div>
       </div>
-      <div className="w-full h-12 bg-black/80 text-white font-bold text-3xl text-center">
-        CARVIS
+      <div className="bg-[#111111] text-white w-full p-4 text-center">
+        <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div>
     </>
   );

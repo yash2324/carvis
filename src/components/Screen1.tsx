@@ -1,5 +1,8 @@
-import { Settings, MessageSquare, CarFront } from "lucide-react";
 
+import car from "../assets/car.svg";
+import quickChat from "../assets/quickChat.svg";
+import Carvis from "../assets/Carvis.png";
+import settingSide from "../assets/settingsSide.svg";
 export default function Screen1() {
   // Mock data
   const recentCompletedJobs = [
@@ -15,13 +18,13 @@ export default function Screen1() {
       id: "01",
       car: "BMW M3 2020",
       issue: "Engine fault suspected, misfire sounds at high speeds.",
-      image: "../../public/car1.jpg",
+      image: "./car1.jpg",
     },
     {
       id: "02",
       car: "Ford Expedition 2019",
       issue: "A/C leaking fluid, might be a broken hose.",
-      image: "../../public/car2.jpg",
+      image: "./car2.jpg",
     },
   ];
 
@@ -30,13 +33,13 @@ export default function Screen1() {
       id: "01",
       car: "Ford Mustang 2019",
       issue: "Waiting for transmission part",
-      image: "../../public/car3.jpg",
+      image: "./car3.jpg",
     },
     {
       id: "02",
       car: "Honda Accord 2018",
       issue: "On hold for customer approval",
-      image: "../../public/car4.jpg",
+      image: "./car4.jpg",
     },
   ];
 
@@ -44,17 +47,17 @@ export default function Screen1() {
     {
       title: "Common Repairs",
       author: "Steve Bob",
-      image: "../../public/car6.jpg",
+      image: "./car6.jpg",
     },
     {
       title: "How to use this tool",
       author: "Bob Coupes",
-      image: "../../public/car7.jpg",
+      image: "./car7.jpg",
     },
     {
       title: "New Ford update",
       author: "James Chris",
-      image: "../../public/car8.jpg",
+      image: "./car8.jpg",
     },
   ];
 
@@ -62,60 +65,75 @@ export default function Screen1() {
     {
       name: "Supercharger XYZ",
       status: "Available",
-      image: "../../public/car9.jpg",
+      image: "./car9.jpg",
     },
-    { name: "Turbo 2.3", status: "Request", image: "../../public/car10.jpg" },
+    { name: "Turbo 2.3", status: "Request", image: "./car10.jpg" },
     {
       name: "Engine Oil",
       status: "Available",
-      image: "../../public/car11.jpg",
+      image: "./car11.jpg",
     },
-    { name: "Brake", status: "Request", image: "../../public/car12.jpg" },
+    { name: "Brake", status: "Request", image: "./car12.jpg" },
   ];
 
   return (
     <>
     <div className="flex  bg-gray-100">
-      <div className="w-1/4 bg-black/60 p-4 flex flex-col">
-        <button className="bg-black text-white py-2 px-4 rounded mb-4">
+    <div className="bg-[#7F7F7F]  w-[24%] flex flex-col">
+      <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
+        <h1 className="text-[18px] font-bold font-body">
           Diagnose New Vehicle
-        </button>
-        <div className="flex justify-between mb-4">
-          <button className="flex items-center">
-            <MessageSquare className="mr-2" />
-            Quick Chat
-          </button>
-          <button className="flex items-center">
-            <Settings className="mr-2" />
-            Settings
-          </button>
+        </h1>
+      </div>
+
+      <div className="flex justify-between p-4">
+        <div className="text-center cursor-pointer">
+          <div className=" rounded-full w-12 h-12  mx-auto">
+            <img src={quickChat} alt="Quick Chat" />
+          </div>
+          <span className="text-[14px] font-header">Quick Chat</span>
         </div>
-        <div className="h-4/6 bg-white  p-5 rounded-lg  overflow-y-auto">
-          <h3 className="font-bold mb-2 text-2xl h-1/6">Recent Completed</h3>
-          <section className="flex flex-col justify-between h-4/6">
-            {recentCompletedJobs.map((job, index) => (
-              <p key={index} className="mb-2 text-base font-medium">
-                {job.car} - {job.issue}
-              </p>
-            ))}
-          </section>
-          <p className="text-sm text-blue-500">more vehicles...</p>
+        <div className="text-center cursor-pointer">
+          <div className=" rounded-full w-12 h-12  mx-auto">
+            <img src={settingSide} alt="setting" />
+          </div>
+          <span className="text-[14px] font-header">Settings</span>
         </div>
-        <button className="bg-transparent border-2 border-white py-2 px-4 rounded mt-4">
+      </div>
+
+      <div className="h-4/6 bg-white m-4 p-5 rounded-lg  overflow-y-auto">
+            <h3 className="font-bold  text-2xl h-1/6 font-header">Recent Vehicles</h3>
+            <section className="flex flex-col justify-between h-4/6">
+              {recentCompletedJobs.map((job, index) => (
+                <p key={index} className="mb-2 text-base font-medium">
+                  {job.car} -{job.issue}
+                </p>
+              ))}
+            </section>
+            <p className="text-sm text-black mt-7">more vehicles...</p>
+          </div>
+
+      <div className="p-4 mt-auto">
+        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
           View FAQ for Carvis
         </button>
-        <button className="bg-transparent border-2 border-white py-2 px-4 rounded mt-4">
+        <button className="border-[1px] border-white font-body w-full p-2 mb-2 text-white rounded">
           Ask other mechanics (Link to WhatsApp)
         </button>
       </div>
 
+      {/* <div className="bg-[#111111] text-white p-4 text-center">
+        <img className="w-44 mx-auto" src={Carvis} alt="logo" />
+      </div> */}
+    </div>
+
       <div className="flex-grow p-4 ">
-        <div className="bg-black/60 rounded-lg flex flex-col gap-8 p-5">
-          <p className="text-lg font-semibold flex">
-            <CarFront />
-            My Mechanical Dashboard
+        <div className="bg-[#7F7F7F] rounded-lg flex flex-col gap-8 p-5">
+          <p className="text-xl font-semibold flex items-center">
+          <img src={car} alt="setting" className="w-10" />
+            <p className="font-body">MyMechanical Dashboard</p>
           </p>
-          <section className="flex gap-6">
+          <section className="flex gap-6 -mt-4">
             <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
               <p className="text-xl font-medium">My Bay</p>
               <p className="font-medium text-black/80">
@@ -188,7 +206,7 @@ export default function Screen1() {
                   {toolsSearch.map((tool, index) => (
                     <div
                       key={index}
-                      className=" rounded-xl bg-white flex flex-row my-1 py-2 "
+                      className=" rounded-xl border-b bg-white flex flex-row my-1 py-2 "
                     >
                       <img src={tool.image} alt="" className="" />
                       <section className="text-base font-medium flex px-5 flex-col w-8/12">
@@ -217,7 +235,9 @@ export default function Screen1() {
         </div>
       </div>
     </div>
-    <div className="w-full h-12 bg-black/80 text-white font-bold text-3xl text-center">CARVIS</div>
+    <div className="bg-[#111111] text-white w-full p-4 text-center">
+        <img className="w-44 mx-auto" src={Carvis} alt="logo" />
+      </div>
     </>
   );
 }
