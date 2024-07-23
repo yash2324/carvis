@@ -129,7 +129,7 @@ export default function Screen1() {
         <img className="w-44 mx-auto" src={Carvis} alt="logo" />
       </div> */}
         </div>
-<div className="flex xl:hidden">
+<div className="flex xl:hidden ">
 <Mechanicaldashboardside/>
 </div>
         <div className="flex-grow lg:p-4">

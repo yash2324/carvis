@@ -87,7 +87,7 @@ const Mechanicaldashboardside = () => {
   return (
     <>
       <div
-        className={`md:hidden fixed top-4 left-4 z-50 ${
+        className={`xl:hidden fixed top-4 left-4 z-50 ${
           isOpen ? "hidden" : ""
         }`}
       >
@@ -112,7 +112,7 @@ const Mechanicaldashboardside = () => {
         </button>
       </div>
 
-      <div className="hidden md:flex bg-[#7F7F7F] w-[24%] h-screen flex-col">
+      <div className="hidden xl:flex bg-[#7F7F7F] w-[24%] h-screen flex-col">
         {sidebarContent}
       </div>
 

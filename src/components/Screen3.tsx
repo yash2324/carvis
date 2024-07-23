@@ -5,8 +5,8 @@ export default function Screen3() {
   return (
     <div className="flex  bg-gray-100">
       <Sidebar />
-      <div className="p-10 w-3/4">
-        <section className="flex gap-2  w-full border-b-4 pb-4">
+      <div className="p-10 w-full xl:w-3/4">
+        <section className="flex gap-2 w-full border-b-4 pb-4">
           <img src={"./car17.jpg"} alt="" />
           <section className="font-header">
             <p className="text-2xl font-body font-bold">BMW M3 2020</p>

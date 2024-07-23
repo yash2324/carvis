@@ -5,6 +5,7 @@ import quickChat from "../assets/quickChat.svg";
 import Carvis from "../assets/Carvis.png";
 
 import settingSide from "../assets/settingsSide.svg";
+import Mechanicaldashboardside from "./Mechanicaldashboardside";
 export default function Screen2() {
   const appointments = [
     { name: "Steve Demps", time: "10AM", vehicle: "BMW M3 2023" },
@@ -43,7 +44,7 @@ export default function Screen2() {
   return (
     <>
       <div className="flex  bg-gray-100">
-        <div className="bg-[#7F7F7F] h-[93vh] w-[24%] flex flex-col">
+        <div className="bg-[#7F7F7F] h-[93vh] hidden xl:flex w-[24%]  flex-col">
           <div className="bg-[#111111] mx-4 rounded-lg mt-2 text-white px-4 py-2 cursor-pointer text-center">
             <h1 className="text-[18px] font-bold font-body">
               Diagnose New Vehicle
@@ -94,15 +95,17 @@ export default function Screen2() {
             </button>
           </div>
         </div>
-
-        <div className="flex-grow px-4 pt-3 ">
-          <div className="bg-[#7F7F7F] h-[90vh] rounded-lg flex flex-col gap-8 p-5">
-            <p className="text-xl font-semibold flex items-center">
+        <div className="flex xl:hidden ">
+<Mechanicaldashboardside/>
+</div>
+        <div className="flex-grow xl:px-4 xl:pt-3 ">
+          <div className="bg-[#7F7F7F] xl:h-[90vh] rounded-lg flex flex-col gap-8 p-5">
+            <p className="text-xl font-semibold ml-7 flex items-center">
               <img src={car} alt="setting" className="w-10" />
               <p className="font-body">MyShopManager Dashboard</p>
             </p>
-            <section className="flex  gap-6">
-              <div className="rounded-xl w-6/12 bg-white p-4 gap-3 flex flex-col">
+            <section className="flex flex-col xl:flex-row  gap-6">
+              <div className="rounded-xl xl:w-6/12 bg-white p-4 gap-3 flex flex-col">
                 <p className="text-4xl font-medium">Current Appointments</p>
                 <div className="bg-white rounded-lg  p-4 ">
                   <div className="flex justify-between items-center mb-4">
@@ -147,23 +150,23 @@ export default function Screen2() {
                   </ul>
                 </div>
               </div>
-              <div className="w-6/12  flex flex-col gap-7">
+              <div className="xl:w-6/12  flex flex-col gap-7">
                 <section>
                   <p className="font-medium text-black/80 text-lg mb-4">
                     Job Status Tracking
                   </p>
-                  <section className="flex justify-between gap-7">
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
+                  <section className="flex justify-between flex-wrap xl:flex-nowrap gap-3 xl:gap-7">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-full xl:w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">3</span> Waiting
                       </p>
                     </div>
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-full xl:w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">5</span> In Servive
                       </p>
                     </div>
-                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-4/12 h-16">
+                    <div className="bg-blue-200 border-blue-400 border rounded-full flex justify-center items-center w-full xl:w-4/12 h-16">
                       <p className="text-black font-medium text-xl">
                         <span className="text-3xl">10</span> Completed
                       </p>
@@ -171,7 +174,7 @@ export default function Screen2() {
                   </section>
                 </section>
                 <section className="w-full flex items-center justify-center">
-                  <section className="bg-white w-10/12 rounded-xl p-7">
+                  <section className="bg-white xl:w-10/12 rounded-xl p-7">
                     <input
                       type="text"
                       className="font-medium bg-black/20 p-2 w-full outline-none rounded-lg"
