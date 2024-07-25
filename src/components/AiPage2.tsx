@@ -1,6 +1,19 @@
+import { useState } from 'react';
 import InputBar from "./InputBar";
 import ImageAvatars from "./Avatar"
+import info from '../assets/information.png'
+import Information from "./Information";
+
 function AiPage() {
+  const [showInformation, setShowInformation] = useState(false);
+  const handleMouseEnter = () => {
+    setShowInformation(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowInformation(false);
+  };
+
   return (
     <div className='relative min-h-screen w-full lg:w-3/4  lg:px-2 lg:p-4  mt-12 lg:mt-0  '>
       <div className='flex items-center py-1 border-b-4  mx-3'>
@@ -15,13 +28,29 @@ function AiPage() {
         </div>
       </div>
 
-      <div className="bg-[#D3D3D3] mt-2 flex py-2  border-b-4 rounded-sm mx-3">
+      <div className="bg-[#D3D3D3] mt-2 flex justify-between py-2  border-b-4 rounded-sm mx-3">
+        <div className="flex flex-row">
         <div className="p-2">
           <ImageAvatars src="https://s3-alpha-sig.figma.com/img/b1b8/cf8c/9cab4790e5f3119ce76099d838feb177?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A1zaQcFrMLSpWTrXTZSrPaczn3p7YoQknZfO47NGXpCsOZwb1lZwMSo7vyy3Zd-ozSzlcFBzAeb6u9b5HOeAFZefGGtHkp1v1tHDuBXSezndoUXT5aDGOoG09HaAk5g4OrgFzlcrRXzbk-tcr3lWNRpa890qAITADmrA68SqmDbN2zkbySeluMTMnHySysa9taK7Sw88cCg2FFDupvpqVnq6lbbd-wyTP1TbRGrkg-vJa9hMXRcgg21XX8nOlii-bNPnHIYOg~XRqoylVyhRc1~E7mRf-mxBibTqTinWNqcnkG-tmEr7aIKIOushUdnhFHJ7CQGn2ukRSH5hYe-xMg__" />
         </div>
         <div>
           <h3 className="font-semibold text-lg">Carvis</h3>
           <p className="text-sm">Diagnostic information will appear here</p>
+        </div>
+        </div>
+        <div className="relative">
+          <img 
+            src={info} 
+            className="w-5  lg:mx-10 my-2 cursor-pointer" 
+            alt=""
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
+          {showInformation && (
+            <div className="absolute right-[calc(100%+10px)] top-0">
+              <Information />
+            </div>
+          )}
         </div>
       </div>
       
