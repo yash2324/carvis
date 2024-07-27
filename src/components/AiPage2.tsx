@@ -6,6 +6,8 @@ import Information from "./Information";
 
 function AiPage() {
   const [showInformation, setShowInformation] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupImageSrc, setPopupImageSrc] = useState('');
   const handleMouseEnter = () => {
     setShowInformation(true);
   };
@@ -13,6 +15,16 @@ function AiPage() {
   const handleMouseLeave = () => {
     setShowInformation(false);
   };
+
+  const handleOpenPopup = (imageSrc:any) => {
+    setPopupImageSrc(imageSrc);
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
 
   return (
     <div className='relative min-h-screen w-full lg:w-3/4  lg:px-2 lg:p-4  mt-12 lg:mt-0  '>
@@ -41,7 +53,7 @@ function AiPage() {
         <div className="relative">
           <img 
             src={info} 
-            className="w-5  lg:mx-10 my-2 cursor-pointer" 
+            className="w-5 mx-2 lg:mx-10 my-2 cursor-pointer" 
             alt=""
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -74,8 +86,35 @@ function AiPage() {
       </div>
       <div className="lg:flex px-8 lg:px-24 mt-3 pb-5 mb-2">
           <div  className="lg:flex lg:flex-row ">
-            <img className="w-[550px] lg:w-[306px] rounded-md h-[200px] lg:h-[222px]" src="https://s3-alpha-sig.figma.com/img/d37f/87a0/02d8da7d2756c9d4799d91a585d1fe61?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IsXcSQriCrTVZ0CPJlF1iuUPrLzt1Lh6gcnBJpeBMueSvXNTm9qLGUviscmSF8A4qTxO-8mSwEXClh2hdRStzW1O5-ns0DKrdnuHoE-Jbbu2oAsMb85YHKauqGOgiVHAokav6m8pwo8sgbP~7eVjfdrzYA-qNXEP2GPeT3rY19x0kkvtfotJlkiRuR~tyC57mSx2RWJRMxI5aAPcT9aILknNZJH999Qr2Z~e84kgtXR0P1gqxQkecu~GF6109-pXcj8A1dnGtChQrPQ7K3T4~SgpFI6dTNeAYDIFEFct4iOSxbRuQ2jPP8opPrA~6UcOMKdfu~KDtT4gl1zc4QEDiA__" alt="" />
+            <img 
+            className="w-[550px] cursor-pointer lg:w-[306px] rounded-md h-[200px] lg:h-[222px]" 
+            onClick={() => handleOpenPopup("https://s3-alpha-sig.figma.com/img/d37f/87a0/02d8da7d2756c9d4799d91a585d1fe61?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IsXcSQriCrTVZ0CPJlF1iuUPrLzt1Lh6gcnBJpeBMueSvXNTm9qLGUviscmSF8A4qTxO-8mSwEXClh2hdRStzW1O5-ns0DKrdnuHoE-Jbbu2oAsMb85YHKauqGOgiVHAokav6m8pwo8sgbP~7eVjfdrzYA-qNXEP2GPeT3rY19x0kkvtfotJlkiRuR~tyC57mSx2RWJRMxI5aAPcT9aILknNZJH999Qr2Z~e84kgtXR0P1gqxQkecu~GF6109-pXcj8A1dnGtChQrPQ7K3T4~SgpFI6dTNeAYDIFEFct4iOSxbRuQ2jPP8opPrA~6UcOMKdfu~KDtT4gl1zc4QEDiA__")}
+            src="https://s3-alpha-sig.figma.com/img/d37f/87a0/02d8da7d2756c9d4799d91a585d1fe61?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IsXcSQriCrTVZ0CPJlF1iuUPrLzt1Lh6gcnBJpeBMueSvXNTm9qLGUviscmSF8A4qTxO-8mSwEXClh2hdRStzW1O5-ns0DKrdnuHoE-Jbbu2oAsMb85YHKauqGOgiVHAokav6m8pwo8sgbP~7eVjfdrzYA-qNXEP2GPeT3rY19x0kkvtfotJlkiRuR~tyC57mSx2RWJRMxI5aAPcT9aILknNZJH999Qr2Z~e84kgtXR0P1gqxQkecu~GF6109-pXcj8A1dnGtChQrPQ7K3T4~SgpFI6dTNeAYDIFEFct4iOSxbRuQ2jPP8opPrA~6UcOMKdfu~KDtT4gl1zc4QEDiA__" alt="" />
           </div>
+
+          {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 shadow-xl ">
+          <div className="bg-white p-4  rounded-md relative mx-3">
+            <button
+              className="absolute top-2 right-2 w-8 h-8 bg-black rounded-full text-white text-xl font-bold flex items-center justify-center"
+              onClick={handleClosePopup}
+            >
+              &times;
+            </button>
+             <div className='shadow-xl'>
+             <img
+              className="w-[600px] rounded-md"
+              src={popupImageSrc}
+              alt="Popup"
+            />
+             </div>
+            <div className='mt-8 mx-5'>
+              <h1 className='font-bold text-lg'>This is all about above diagram</h1>
+              <p>Hey! here you will get complete information about image . Good Day Buddy!</p>
+            </div>
+          </div>
+        </div>
+      )}
           <div className="mt-8 lg:ml-16 ">
                <div className="lg:flex lg:p-4">
                   <div  className="">
